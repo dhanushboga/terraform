@@ -35,3 +35,7 @@ output "ec2-info" {
           aws_instance.ec2.public_ip
           ]
 }
+
+
+# git filter-branch --tree-filter 'rm -rf .terraform' HEAD
+# git log --oneline
