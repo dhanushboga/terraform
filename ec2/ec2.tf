@@ -1,6 +1,6 @@
 resource "aws_instance" "ec2" {
-  ami = var.ami_id
-  instance_type = var.instance_type
+  ami = local.ami
+  instance_type = local.instance_type
   vpc_security_group_ids = local.vpc_security_group_ids
   tags = var.aws_tags
   
@@ -27,7 +27,6 @@ resource "aws_security_group" "allow-alls" {
     cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = ["::/0"]
   }
-  
 }
 
 output "ec2-info" {
