@@ -14,7 +14,18 @@ variable "aws_tags" {
 
 }
 
-variable "aws_parameter_tags" {
+variable "aws_sg_tags" {
+  default = {
+    Name = "allow-alls"
+  }
+}
+
+
+
+
+
+
+variable "ec2_parameter_tags" {
   default = {
     environment = "dev"
     resource    = "ec2_instance"
@@ -22,8 +33,9 @@ variable "aws_parameter_tags" {
 }
 
 
-variable "aws_sg_tags" {
+variable "sg_aws_parameter_tags" {
   default = {
-    Name = "allow-alls"
+    environment = "dev"
+    resource    = "ec2_instance-sg"
   }
 }
