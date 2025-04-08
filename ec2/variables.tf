@@ -9,8 +9,10 @@ variable "instance_type" {
 variable "aws_tags" {
   type = map
   default = {
+    project     = "expense"
     Name        = "aws-terraform"
     environment = "dev"
+    component   = "backend"
   }
   description = "this is aws_tagging"
 
