@@ -7,23 +7,23 @@ variable "instance_type" {
 }
 
 variable "aws_tags" {
-    default = {
-        Name = "aws-terraform"
-        environment = "dev"
-    }
-  
+  default = {
+    Name        = "aws-terraform"
+    environment = "dev"
+  }
+
 }
 
 variable "aws_parameter_tags" {
   default = {
     environment = "dev"
-    resource = "ec2_instance"
+    resource    = "ec2_instance"
   }
 }
 
 
 variable "aws_sg_tags" {
-    default = {
-        Name = "allow-alls"
-    }
+  default = {
+    Name = "allow-alls"
+  }
 }

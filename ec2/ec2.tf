@@ -1,17 +1,17 @@
 resource "aws_instance" "ec2" {
-  
-  ami = data.aws_ami.ec2.id
-  instance_type = local.instance_type
+
+  ami                    = data.aws_ami.ec2.id
+  instance_type          = local.instance_type
   vpc_security_group_ids = local.vpc_security_group_ids
-  tags = var.aws_tags
-  
+  tags                   = var.aws_tags
+
 }
 
 resource "aws_security_group" "allow-alls" {
 
   name        = "allow-alls"
   description = "Allow the traffic to ec2-instance"
-  tags = var.aws_sg_tags
+  tags        = var.aws_sg_tags
 
   egress {
     from_port        = 0
@@ -32,13 +32,13 @@ resource "aws_security_group" "allow-alls" {
 
 output "ec2-ID" {
   value = aws_instance.ec2.id
-          
-          
+
+
 }
 
 output "ec2-public_ip" {
   value = aws_instance.ec2.public_ip
-          
+
 }
 
 

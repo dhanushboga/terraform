@@ -1,6 +1,6 @@
 data "aws_ami" "ec2" {
-    most_recent = true
-    owners = ["973714476881"]
+  most_recent = true
+  owners      = ["973714476881"]
 
   filter {
     name   = "name"
@@ -8,20 +8,20 @@ data "aws_ami" "ec2" {
   }
 
   filter {
-        name   = "root-device-type"
-        values = ["ebs"]
-    }
+    name   = "root-device-type"
+    values = ["ebs"]
+  }
 
-    filter {
-        name   = "virtualization-type"
-        values = ["hvm"]
-    }
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
 
-    filter {
-      name = "platform-details"
-      values = ["Red Hat Enterprise Linux"]
-    }
- 
+  filter {
+    name   = "platform-details"
+    values = ["Red Hat Enterprise Linux"]
+  }
+
 }
 
 
