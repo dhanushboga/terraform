@@ -25,8 +25,8 @@ variable "aws_sg_tags" {
 }
 
 
-
-
+# terraform plan -var "instance_type=t3.large"
+# export TF_VAR_instance_type="t3.xlarge"
 
 
 variable "ec2_parameter_tags" {
@@ -43,3 +43,12 @@ variable "sg_aws_parameter_tags" {
     resource    = "ec2_instance-sg"
   }
 }
+
+
+# variable preferences
+
+# 1) command -line
+# 2) tfvars
+# 3) ENV (export TF_VAR_instance_type="t3.xlarge")
+# 4) default
+# 5) command prompt like "enter the instance type"
