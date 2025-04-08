@@ -30,10 +30,15 @@ resource "aws_security_group" "allow-alls" {
   }
 }
 
-output "ec2-info" {
-  value = [aws_instance.ec2.id,
-          aws_instance.ec2.public_ip
-          ]
+output "ec2-ID" {
+  value = aws_instance.ec2.id
+          
+          
+}
+
+output "ec2-public_ip" {
+  value = aws_instance.ec2.public_ip
+          
 }
 
 
