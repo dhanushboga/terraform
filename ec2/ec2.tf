@@ -21,8 +21,8 @@ resource "aws_security_group" "allow-alls" {
   }
 
   ingress {
-    from_port        = 0
-    to_port          = 0
+    from_port        = 22
+    to_port          = 22
     protocol         = "-1"
     cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = ["::/0"]
@@ -30,9 +30,12 @@ resource "aws_security_group" "allow-alls" {
 }
 
 output "ec2-info" {
-  value = [aws_instance.ec2.id,
-          aws_instance.ec2.public_ip
-          ]
+  value = aws_instance.ec2.id
+              
+}
+
+output "ec2-public-IP" {
+  value = aws_instance.ec2.private_ip
 }
 
 
