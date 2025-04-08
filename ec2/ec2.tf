@@ -1,6 +1,6 @@
 resource "aws_instance" "ec2" {
   
-  ami = local.ami
+  ami = data.aws_ami.ec2.id
   instance_type = local.instance_type
   vpc_security_group_ids = local.vpc_security_group_ids
   tags = var.aws_tags
