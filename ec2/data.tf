@@ -24,3 +24,4 @@ data "aws_ami" "ec2" {
 
 }
 
+#data sources are used to query existing information from the provider
