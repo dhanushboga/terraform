@@ -6,15 +6,33 @@ variable "instance_type" {
   default = "t3.micro"
 }
 
-variable "aws_tags" {
-  type = map
-  default = {
-    project     = "expense"
-    Name        = "aws-terraform"
-    environment = "dev"
-    component   = "backend"
-  }
-  description = "this is aws_tagging"
+# variable "aws_tags" {
+#   type = map
+#   default = {
+#     project     = "expense"
+#     Name        = "aws-terraform"
+#     environment = "dev"
+#     component   = "backend"
+#   }
+#   description = "this is aws_tagging"
+
+# }
+
+
+variable "project" {
+  default = "expense"
+
+}
+
+
+variable "component" {
+  default = "backend"
+
+}
+
+
+variable "environment" {
+  default = "dev"
 
 }
 
@@ -24,6 +42,10 @@ variable "aws_sg_tags" {
   }
 }
 
+
+variable "Name" {
+  default = "${var.project}-${var.component}-${var.environment}"
+}
 
 # terraform plan -var "instance_type=t3.large"
 # export TF_VAR_instance_type="t3.xlarge"
