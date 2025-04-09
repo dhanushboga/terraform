@@ -19,3 +19,5 @@ output "ec2-platform" {
 output "default_vpc-ID" {
   value = data.aws_vpc.default.id
 }
+
+#output blocks are used to print the information.it will be used in the module developement.
