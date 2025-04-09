@@ -67,6 +67,14 @@ variable "sg_aws_parameter_tags" {
   }
 }
 
+variable "zone_id" {
+  default = "Z069067621384XJY9QM7B"
+}
+
+variable "domain_name" {
+  default = "chenchudaws82s.online"
+}
+
 
 # variable preferences
 
