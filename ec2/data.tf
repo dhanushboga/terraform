@@ -24,4 +24,8 @@ data "aws_ami" "ec2" {
 
 }
 
+data "aws_vpc" "default" {
+  default = true
+}
+
 #data sources are used to query existing information from the provider
