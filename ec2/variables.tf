@@ -43,9 +43,6 @@ variable "aws_sg_tags" {
 }
 
 
-variable "Name" {
-  default = "${var.project}-${var.component}-${var.environment}"
-}
 
 # terraform plan -var "instance_type=t3.large"
 # export TF_VAR_instance_type="t3.xlarge"

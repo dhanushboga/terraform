@@ -5,7 +5,7 @@ locals {
   ec2_parameters_tags    = var.ec2_parameter_tags
   # aws_tags               = var.aws_tags
   ami_id                 = data.aws_ami.ec2.id
-  name = "${var.project}-${var.component}-${var.environment}"   #expense-backend-dev
+  Name = "${var.project}-${var.component}-${var.environment}"   #expense-backend-dev
   # ami = var.ami_id
 }
 
