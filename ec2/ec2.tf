@@ -1,9 +1,10 @@
 resource "aws_instance" "ec2" {
 
-  ami                    = data.aws_ami.ec2.id
+  # ami                    = data.aws_ami.ec2.id
+  ami                    = local.ami_id
   instance_type          = local.instance_type
   vpc_security_group_ids = local.vpc_security_group_ids
-  tags                   = var.aws_tags
+  tags                   = local.aws_tags
 
 }
 
