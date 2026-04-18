@@ -52,7 +52,7 @@ variable ec2_ami_id {
   default     = "ami-0220d79f3f480ecf5"
 }
 
-variable ec2_instance_id {
+variable ec2_instance_type {
   default     = "t2.micro"
 }
 

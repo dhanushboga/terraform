@@ -25,7 +25,7 @@ resource "aws_security_group" "allow_ssh_terraform" {
 
 resource "aws_instance" "terraform_ec2" {
   ami           = var.ec2_ami_id
-  instance_type = var.ec2_instance_id
+  instance_type = var.ec2_instance_type
   vpc_security_group_ids = [aws_security_group.allow_ssh_terraform.id]
   tags = var.ec2_tags
 }
