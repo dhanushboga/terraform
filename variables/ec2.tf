@@ -29,3 +29,11 @@ resource "aws_instance" "terraform_ec2" {
   vpc_security_group_ids = [aws_security_group.allow_ssh_terraform.id]
   tags = var.ec2_tags
 }
+
+
+#variable preferences
+#command line
+#tfvars
+#env variables  #export TF_VARS_ec2_instance_type=t3.micro
+#default
+#args
