@@ -1,0 +1,13 @@
+resource "aws_route53_zone" "hosted_zone" {
+  name = "daws81s.com"
+}
+
+
+resource "aws_route53_record" "expense" {
+  count = length(var.instance_names)
+  zone_id = aws_route53_zone.hosted_zone.zone_id
+  name    = var.instance_names[count.index] == "frontend" ? var.domain_name : "${var.instance_names[count.index]}.${var.domain_name}"
+  type    = "A"
+  ttl     = 1
+  records = var.instance_names[count.index] == "frontend" ? [aws_instance.terraform_ec2[count.index].public_ip] : [aws_instance.terraform_ec2[count.index].private_ip]
+}
