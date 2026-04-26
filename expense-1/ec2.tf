@@ -7,7 +7,7 @@ resource "aws_security_group" "allow_ssh_terraform" {
     from_port        = 0
     to_port          = 0
     protocol         = "-1"
-    cidr_blocks      = ["0.0.0.0/0"]
+    cidr_blocks      = var.sg_cidr
     ipv6_cidr_blocks = ["::/0"]
   }
 
@@ -15,13 +15,14 @@ resource "aws_security_group" "allow_ssh_terraform" {
     from_port        = 22
     to_port          = 22
     protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0"] #allow from everyone
+    cidr_blocks      = var.sg_cidr #allow from everyone
     ipv6_cidr_blocks = ["::/0"]
   }
 
   tags = merge(var.common_tags,
   {
     Name = "allow-all-ports"
+    Created_by = "dhanush_boga"
   }
   )
 }
@@ -31,13 +32,14 @@ resource "aws_security_group" "allow_ssh_terraform" {
 
 resource "aws_instance" "expense" {
   count = length(var.instance_names)
-  ami           = "ami-0220d79f3f480ecf5"
-  instance_type = "t2.micro"
+  ami           = data.aws_ami.expense_ec2.id
+  instance_type = var.instance_names[count.index] == "mysql"? "t3.micro" : "t2.micro"
   vpc_security_group_ids = [aws_security_group.allow_ssh_terraform.id]
 
   tags = merge(var.common_tags,
   {
     Name = var.instance_names[count.index]
+    Created_by = "dhanush_boga"
   }
  )
 }

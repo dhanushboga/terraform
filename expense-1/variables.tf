@@ -21,3 +21,10 @@ variable domain_name {
   default     = "daws84s.com"
   
 }
+
+variable sg_cidr {
+  type        = list(string)
+  default     = ["0.0.0.0/0"]
+  
+}
+
