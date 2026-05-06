@@ -25,7 +25,6 @@ resource "aws_security_group" "allow_ssh_terraform" {
 }
 
 
-
 resource "aws_instance" "terraform_ec2" {
   ami           = "ami-0220d79f3f480ecf5"
   instance_type = "t2.micro"
