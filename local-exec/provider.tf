@@ -6,12 +6,12 @@ terraform {
     }
   }
 
-backend "s3" {
- bucket = "81s-dhanush"
- key = "81s-remote-local-exec"
- region = "us-east-1"
- use_lockfile = true
-}
+  backend "s3" {
+    bucket       = "81s-dhanush"
+    key          = "81s-remote-local-exec"
+    region       = "us-east-1"
+    use_lockfile = true
+  }
 }
 
 provider "aws" {

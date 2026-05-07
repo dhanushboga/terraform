@@ -1,7 +1,7 @@
 data "aws_ami" "ec2" {
 
-  most_recent      = true
-  owners           = ["973714476881"]
+  most_recent = true
+  owners      = ["973714476881"]
 
   filter {
     name   = "name"
