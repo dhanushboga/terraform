@@ -22,18 +22,18 @@ resource "aws_instance" "ec2_local_exec" {
     when = destroy
 
     inline = [
-      
+
       "sudo systemctl stop nginx",
-      
+
     ]
   }
 
   connection {
-    type        = "ssh"
-    user        = "ec2-user"
-    password    =  "DevOps321"
-    host = self.public_ip
-    
+    type     = "ssh"
+    user     = "ec2-user"
+    password = "DevOps321"
+    host     = self.public_ip
+
   }
 }
 
